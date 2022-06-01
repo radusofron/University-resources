@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31ee3afc-f2ce-4f59-add4-d2e41f24d187" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/VersionOneAndTwoBottomControlPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/University_Resources.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BottomControlPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FramesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FramesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MiddlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainMiddlePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TopControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainTopPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BottomControlPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FramesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FramesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MiddlePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TopControlPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654022136360</updated>
-      <workItem from="1654022137688" duration="13298000" />
+      <workItem from="1654022137688" duration="23324000" />
     </task>
     <servers />
   </component>
@@ -83,5 +89,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

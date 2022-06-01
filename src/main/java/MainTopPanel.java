@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class TopControlPanel extends JPanel {
+public class MainTopPanel extends JPanel {
     final MainFrame frame;
     JButton versionOneBtn = new JButton("Version 1");
     JButton versionTwoBtn = new JButton("Version 2");
 
-    public TopControlPanel(MainFrame frame) {
+    public MainTopPanel(MainFrame frame) {
         this.frame = frame;
         init();
     }
@@ -29,7 +29,7 @@ public class TopControlPanel extends JPanel {
 
     private void startVersionTwo(ActionEvent event) {
         versionOneBtn.setEnabled(false);
-        versionTwoBtn.setText("Version 1 has been selected");
+        versionTwoBtn.setText("Version 2 has been selected");
         FramesController.versionOneSelected = false;
         FramesController.versionTwoSelected = true;
     }
