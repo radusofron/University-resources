@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31ee3afc-f2ce-4f59-add4-d2e41f24d187" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/VersionOneRoomsInputPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainTopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainTopPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneAndTwoBottomControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneAndTwoBottomControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneIndicationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneIndicationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneInputPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneTopConfigPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneConfigurationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainTopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainTopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneAndTwoBottomControlPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneAndTwoBottomControlPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneIndicationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneIndicationPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneTopConfigPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneRoomsInputPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneRoomsInputPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneRoomsInputPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneRoomsInputPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654022136360</updated>
-      <workItem from="1654022137688" duration="40594000" />
+      <workItem from="1654022137688" duration="46045000" />
     </task>
     <servers />
   </component>
