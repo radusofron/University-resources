@@ -2,22 +2,14 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class VersionOneRoomsInputPanel extends JPanel {
     final VersionOneFrame versionOneFrame;
     static JTextField nameField;
     static JSpinner capacitySpinner;
     static JButton nextBtn;
-    int counterOfRooms;
-    String roomName = "";
-    int roomCapacity;
-    int roomIsBusy = 0; // by default they are free
+    Room[] rooms = new Room[20];
     int roomIndex = 0;
-    ArrayList<String> roomNames = new ArrayList<>();
-    int[] roomCapacities = new int[20];
-    int[] roomsAreBusy = new int[20];
     Database database;
 
     public VersionOneRoomsInputPanel(VersionOneFrame frameOne){
@@ -44,7 +36,7 @@ public class VersionOneRoomsInputPanel extends JPanel {
         add(nameField);
         add(capacitySpinner);
         add(nextBtn);
-        nextBtn.addActionListener(this::nextRoom);
+        nextBtn.addActionListener(this::checkRoom);
     }
 
     private Border createBorder() {
@@ -53,32 +45,30 @@ public class VersionOneRoomsInputPanel extends JPanel {
         return border;
     }
 
-    private void nextRoom(ActionEvent event) {
-       // extract input
-       roomName = nameField.getText();
-       roomCapacity = (int)capacitySpinner.getValue();
-
+    private void checkRoom(ActionEvent event) {
        // check if room has a name; it can't be <<"">>
-       if(!roomName.equals(""))
+       if(!nameField.getText().equals(""))
        {
-           //still compare not to be already written - name is primary key...
-           nameField.setText("");
-           counterOfRooms++;
+           // extract input
+           rooms[roomIndex].setRoomName(nameField.getText());
+           rooms[roomIndex].setRoomCapacity((int)capacitySpinner.getValue());
 
-           // add name, capacity and if it's busy to their correspondent arrays
-           System.out.println(roomName);
-           System.out.println(roomCapacity);
-           System.out.println(roomIsBusy);
-           roomNames.add(roomName);
-           roomCapacities[roomIndex] = roomCapacity;
-           roomsAreBusy[roomIndex] = roomIsBusy;
+           //still compare not to be already written - name is primary key...
+           // TO DO
+           nameField.setText("");
+
+           // display to be sure all it's good
+           System.out.println(rooms[roomIndex].getRoomName());
+           System.out.println(rooms[roomIndex].getRoomCapacity());
+           System.out.println(rooms[roomIndex].getRoomCapacity());
+
            roomIndex++;
        }
 
-       // we come to the inputed number of rooms
-       if(counterOfRooms == VersionOneConfigurationPanel.numberOfRooms)
+       // we came to the inputed number of rooms
+       if(roomIndex == VersionOneConfigurationPanel.numberOfRooms)
        {
-           database = new Database(roomNames, roomCapacities, roomsAreBusy);
+           database = new Database(rooms);
            nameField.setEnabled(false);
            capacitySpinner.setEnabled(false);
            nextBtn.setEnabled(false);
