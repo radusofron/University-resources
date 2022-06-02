@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 
 public class MainTopPanel extends JPanel {
     final MainFrame frame;
-    JButton versionOneBtn = new JButton("Version 1");
-    JButton versionTwoBtn = new JButton("Version 2");
+    JButton versionOneBtn = new JButton("Start Version 1");
+    JButton versionTwoBtn = new JButton("Start Version 2");
 
     public MainTopPanel(MainFrame frame) {
         this.frame = frame;

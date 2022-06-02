@@ -3,14 +3,14 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class VersionOneTopConfigPanel extends JPanel{
+public class VersionOneConfigurationPanel extends JPanel{
     final VersionOneFrame versionOneFrame;
     JLabel howManyRoomsLabel;
     JSpinner howManyRoomsSpinner;
     JButton createNrOfRoomsBtn;
-    int numberOfRooms = 0;
+    static int numberOfRooms = 0;
 
-    public VersionOneTopConfigPanel(VersionOneFrame frameOne) {
+    public VersionOneConfigurationPanel(VersionOneFrame frameOne) {
         this.versionOneFrame = frameOne;
         init();
     }
@@ -26,7 +26,7 @@ public class VersionOneTopConfigPanel extends JPanel{
 
         // how many rooms menu
         howManyRoomsLabel = new JLabel("Insert number of rooms:");
-        howManyRoomsSpinner = new JSpinner(new SpinnerNumberModel(10,1,25,1));
+        howManyRoomsSpinner = new JSpinner(new SpinnerNumberModel(10,1,20,1));
         createNrOfRoomsBtn = new JButton("Done");
         add(howManyRoomsLabel);
         add(howManyRoomsSpinner);
@@ -49,5 +49,10 @@ public class VersionOneTopConfigPanel extends JPanel{
         // extract the number of rooms inserted
         numberOfRooms = (int)howManyRoomsSpinner.getValue();
         System.out.println("S-au introdus " + numberOfRooms + " sali.");
+
+        // enable next things
+        VersionOneRoomsInputPanel.nameField.setEnabled(true);
+        VersionOneRoomsInputPanel.capacitySpinner.setEnabled(true);
+        VersionOneRoomsInputPanel.nextBtn.setEnabled(true);
     }
 }

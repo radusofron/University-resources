@@ -29,17 +29,11 @@ public class VersionOneIndicationPanel extends JPanel {
         indicationNo2.setHorizontalAlignment(JLabel.CENTER);
         add(indicationNo1);
         add(indicationNo2);
-
-        // start creating labels & text fields for every room
-//        for (int index = 0; index < 25; index++)
-//        {
-//            add(new JLabel("Room"));
-//        }
     }
 
     private Border createBorder() {
         Border border;
-        border = BorderFactory.createMatteBorder( 1,2,2,2, Color.BLACK);
+        border = BorderFactory.createMatteBorder( 1,2,0,2, Color.BLACK);
         return border;
     }
 

@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 public class VersionOneAndTwoBottomControlPanel extends JPanel {
     final VersionOneFrame versionOneFrame;
     final VersionTwoFrame versionTwoFrame;
-    JButton startBtn = new JButton("Start");
+    JButton createBtn = new JButton("Create schedule");
     JButton exitBtn = new JButton("Exit");
 
     public VersionOneAndTwoBottomControlPanel(VersionOneFrame frameOne) {
@@ -21,19 +21,23 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
 
     private void initForVersionOne() {
         // GUI settings
-        setMinimumSize(new Dimension(50,775));
-        setPreferredSize(new Dimension(50,775));
-        setMaximumSize(new Dimension(50,775));
-        setBounds(25,500, 750, 50);
+        setMinimumSize(new Dimension(700,50));
+        setPreferredSize(new Dimension(700,50));
+        setMaximumSize(new Dimension(700,50));
+        setBounds(50,500, 700, 50);
         setLayout(new GridLayout(1,2));
-        add(startBtn);
+
+        createBtn.setEnabled(false);
+        add(createBtn);
         add(exitBtn);
         //startBtn.addActionListener(this::startApp);
         exitBtn.addActionListener(this::exitAppOne);
     }
     private void initForVersionTwo() {
         setLayout(new GridLayout(1,2));
-        add(startBtn);
+
+        createBtn.setEnabled(false);
+        add(createBtn);
         add(exitBtn);
         //startBtn.addActionListener(this::startApp);
         exitBtn.addActionListener(this::exitAppTwo);

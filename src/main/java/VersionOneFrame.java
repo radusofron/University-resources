@@ -20,12 +20,16 @@ public class VersionOneFrame extends JFrame {
         setBounds(225,50,800,600);
 
         // create configuration panel
-        VersionOneTopConfigPanel configPanel = new VersionOneTopConfigPanel(this);
+        VersionOneConfigurationPanel configPanel = new VersionOneConfigurationPanel(this);
         add(configPanel);
 
         // create indications panel
         VersionOneIndicationPanel indicationPanel = new VersionOneIndicationPanel(this);
         add(indicationPanel);
+
+        // create input panel
+        VersionOneRoomsInputPanel inputPanel = new VersionOneRoomsInputPanel(this);
+        add(inputPanel);
 
         // create  panel with start & exit buttons
         VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
