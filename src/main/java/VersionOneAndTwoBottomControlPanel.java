@@ -20,6 +20,11 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
     }
 
     private void initForVersionOne() {
+        // GUI settings
+        setMinimumSize(new Dimension(50,775));
+        setPreferredSize(new Dimension(50,775));
+        setMaximumSize(new Dimension(50,775));
+        setBounds(25,500, 750, 50);
         setLayout(new GridLayout(1,2));
         add(startBtn);
         add(exitBtn);

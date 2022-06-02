@@ -10,10 +10,10 @@ public class VersionTwoFrame extends JFrame {
 
     private void init(){
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
 
         // set the size of the frame
         setPreferredSize(new Dimension(800,600));
-
 
         // create  panel with start & exit buttons
         VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);

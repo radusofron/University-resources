@@ -10,16 +10,28 @@ public class VersionOneFrame extends JFrame {
 
     private void init() throws InterruptedException {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
 
-        // set the size of the frame
+        // GUI settings
+        setLayout(null);
+        setMinimumSize(new Dimension(800,600));
         setPreferredSize(new Dimension(800,600));
+        setMaximumSize(new Dimension(800,600));
+        setBounds(225,50,800,600);
 
         // create configuration panel
-        VersionOneConfigPanel configPanel = new VersionOneConfigPanel(this);
-        add(configPanel, BorderLayout.NORTH);
+        VersionOneTopConfigPanel configPanel = new VersionOneTopConfigPanel(this);
+        add(configPanel);
+
+        // create indications panel
+        VersionOneIndicationPanel indicationPanel = new VersionOneIndicationPanel(this);
+        add(indicationPanel);
 
         // create  panel with start & exit buttons
         VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
-        add(optionsPanel, BorderLayout.SOUTH);
+        add(optionsPanel);
+
+        // invoke the layout manager
+        pack();
     }
 }
