@@ -31,6 +31,10 @@ public class VersionOneFrame extends JFrame {
         VersionOneRoomsInputPanel inputPanel = new VersionOneRoomsInputPanel(this);
         add(inputPanel);
 
+        // create output panel
+        VersionOneScheduleOutputPanel outputPanel = new VersionOneScheduleOutputPanel(this);
+        add(outputPanel);
+
         // create  panel with start & exit buttons
         VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
         add(optionsPanel);

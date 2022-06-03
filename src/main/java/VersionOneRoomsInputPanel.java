@@ -2,14 +2,18 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 public class VersionOneRoomsInputPanel extends JPanel {
     final VersionOneFrame versionOneFrame;
     static JTextField nameField;
     static JSpinner capacitySpinner;
     static JButton nextBtn;
-    Room[] rooms = new Room[20];
-    int roomIndex = 0;
+    int counterForRooms = 0;
+    ArrayList<String> roomNames = new ArrayList<>();
+    int[] roomCapacities = new int[20];
+    int[] roomsAreBusy = new int[20];
+    int[] roomsId = new int[20];
     Database database;
 
     public VersionOneRoomsInputPanel(VersionOneFrame frameOne){
@@ -19,10 +23,11 @@ public class VersionOneRoomsInputPanel extends JPanel {
 
     private void init(){
         // GUI settings
-        setMinimumSize (new Dimension (700, 400));
-        setPreferredSize (new Dimension (700, 400));
-        setMaximumSize (new Dimension (700, 400));
-        setBounds(50, 100, 700, 400);
+        setBackground(Color.ORANGE);
+        setMinimumSize (new Dimension (700, 40));
+        setPreferredSize (new Dimension (700, 40));
+        setMaximumSize (new Dimension (700, 40));
+        setBounds(50, 90, 700, 40);
         setBorder(createBorder());
 
         // create text field for name, spinner for capacity & "next" button
@@ -41,40 +46,39 @@ public class VersionOneRoomsInputPanel extends JPanel {
 
     private Border createBorder() {
         Border border;
-        border = BorderFactory.createMatteBorder( 2,2,2,2, Color.BLACK);
+        border = BorderFactory.createMatteBorder( 1,2,0,2, Color.BLACK);
         return border;
     }
 
     private void checkRoom(ActionEvent event) {
-       // check if room has a name; it can't be <<"">>
-       if(!nameField.getText().equals(""))
+       // check if room has a name; it can't be <<"">> or null
+       if(!nameField.getText().isEmpty())
        {
-           // extract input
-           rooms[roomIndex].setRoomName(nameField.getText());
-           rooms[roomIndex].setRoomCapacity((int)capacitySpinner.getValue());
+           // create an instance of Room class and extract input
+           Room room = new Room();
+           room.setRoomName(nameField.getText());
+           room.setRoomCapacity((int)capacitySpinner.getValue());
+           room.setRoomIsBusy(0);
+           room.setId(counterForRooms);
 
-           //still compare not to be already written - name is primary key...
-           // TO DO
+           roomNames.add(room.getRoomName());
+           roomCapacities[counterForRooms] = room.getRoomCapacity();
+           roomsAreBusy[counterForRooms] = room.getRoomIsBusy();
+           roomsId[counterForRooms] = room.getId();
+
+           // reinitialise nameField, increment no of rooms
            nameField.setText("");
-
-           // display to be sure all it's good
-           System.out.println(rooms[roomIndex].getRoomName());
-           System.out.println(rooms[roomIndex].getRoomCapacity());
-           System.out.println(rooms[roomIndex].getRoomCapacity());
-
-           roomIndex++;
+           counterForRooms++;
        }
 
-       // we came to the inputed number of rooms
-       if(roomIndex == VersionOneConfigurationPanel.numberOfRooms)
+       // all the necessary rooms were inserted
+       if(counterForRooms == VersionOneConfigurationPanel.numberOfRooms)
        {
-           database = new Database(rooms);
+           database = new Database(roomNames, roomCapacities, roomsAreBusy, roomsId);
            nameField.setEnabled(false);
            capacitySpinner.setEnabled(false);
            nextBtn.setEnabled(false);
        }
-
-
     }
 
 }

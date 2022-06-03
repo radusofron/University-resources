@@ -18,10 +18,10 @@ public class VersionOneConfigurationPanel extends JPanel{
     private void init(){
         // GUI settings
         setBackground(Color.ORANGE);
-        setMinimumSize (new Dimension (700, 50));
-        setPreferredSize (new Dimension (700, 50));
-        setMaximumSize (new Dimension (700, 50));
-        setBounds(50,0,700,50);
+        setMinimumSize (new Dimension (700, 40));
+        setPreferredSize (new Dimension (700, 40));
+        setMaximumSize (new Dimension (700, 40));
+        setBounds(50,0,700,40);
         setBorder(createBorder());
 
         // how many rooms menu

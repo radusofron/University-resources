@@ -19,7 +19,7 @@ public class VersionOneIndicationPanel extends JPanel {
         setMinimumSize (new Dimension (700, 50));
         setPreferredSize (new Dimension (700, 50));
         setMaximumSize (new Dimension (700, 50));
-        setBounds(50, 50, 700, 50);
+        setBounds(50, 40, 700, 50);
         setBorder(createBorder());
 
         // indications on how to use the app
