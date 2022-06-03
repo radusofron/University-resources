@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class MainMiddlePanel extends JPanel {
     final MainFrame frame;
-    JLabel leftTextBox = new JLabel("<html>* If you click on VERSION 1, you have to enter just the rooms as input. <br><br>* A schedule will be created according to those rooms and their capacities.</html>");
-    JLabel rightTextBox = new JLabel("<html>* If you click on VERSION 2, you have to enter all the data as input. <br><br>* A schedule will be created after you insert the groups, the teachers, the rooms and so on...</html>");
+    JLabel leftTextBox = new JLabel("<html>* If you click on START VERSION 1, you have to enter just the rooms as input. <br><br>* A schedule will be created according to those rooms and their capacities.</html>");
+    JLabel rightTextBox = new JLabel("<html>* If you click on START VERSION 2, you have to enter the groups, the teachers and their correspondent classes as input. <br><br>* A schedule will be created according to the data which you have enetered.</html>");
     public MainMiddlePanel(MainFrame frame) {
         this.frame = frame;
         init();
@@ -14,8 +14,10 @@ public class MainMiddlePanel extends JPanel {
     private void init() {
         setLayout(new GridLayout(1,2));
         leftTextBox.setBorder(createRightBorder());
+        leftTextBox.setFont(new Font("Times New Roman", Font.PLAIN, 15));
         add(leftTextBox);
         rightTextBox.setBorder(createLeftBorder());
+        rightTextBox.setFont(new Font("Times New Roman", Font.PLAIN, 15));
         add(rightTextBox);
     }
 

@@ -4,12 +4,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Database {
+public class DatabaseWriteRooms {
     String url = "jdbc:mysql://localhost:3306/university_resources_v_one";
     String username = "radu";
     String password = "mysqlradu";
 
-    public Database(ArrayList<String> roomsName, int[] roomCapacities, int[] roomsAreBusy, int[] roomsId){
+    public DatabaseWriteRooms(ArrayList<String> roomsName, int[] roomCapacities, int[] roomsAreBusy, int[] roomsId){
         System.out.println("Connecting to the database...");
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Database connection has been established!");

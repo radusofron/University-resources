@@ -27,19 +27,17 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
         setBounds(50,500, 700, 50);
         setLayout(new GridLayout(1,2));
 
-        createBtn.setEnabled(false);
         add(createBtn);
         add(exitBtn);
-        //startBtn.addActionListener(this::startApp);
+        createBtn.addActionListener(this::startAppOne);
         exitBtn.addActionListener(this::exitAppOne);
     }
     private void initForVersionTwo() {
         setLayout(new GridLayout(1,2));
 
-        createBtn.setEnabled(false);
         add(createBtn);
         add(exitBtn);
-        //startBtn.addActionListener(this::startApp);
+        createBtn.addActionListener(this::startAppTwo);
         exitBtn.addActionListener(this::exitAppTwo);
     }
 
@@ -48,5 +46,17 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
     }
     private void exitAppTwo(ActionEvent event) {
         versionTwoFrame.dispose();
+    }
+
+    private void startAppOne(ActionEvent event) {
+        if(!VersionOneRoomsInputPanel.nextBtn.isEnabled())
+        {
+            System.out.println("Pot incepe");
+        }
+        else
+            System.out.println("Nu pot incepe!");
+    }
+    private void startAppTwo(ActionEvent event) {
+
     }
 }
