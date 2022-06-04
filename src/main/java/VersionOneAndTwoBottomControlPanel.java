@@ -7,6 +7,7 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
     final VersionTwoFrame versionTwoFrame;
     JButton createBtn = new JButton("Create schedule");
     JButton exitBtn = new JButton("Exit");
+    Algorithm algorithm;
 
     public VersionOneAndTwoBottomControlPanel(VersionOneFrame frameOne) {
         this.versionOneFrame = frameOne;
@@ -51,10 +52,14 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
     private void startAppOne(ActionEvent event) {
         if(!VersionOneRoomsInputPanel.nextBtn.isEnabled())
         {
-            System.out.println("Pot incepe");
+            createBtn.setText("Creating schedule...");
+            algorithm = new Algorithm();
+            algorithm.startAlgorithm();
+
         }
-        else
-            System.out.println("Nu pot incepe!");
+        else{
+            createBtn.setText("Not enough data inserted");
+        }
     }
     private void startAppTwo(ActionEvent event) {
 

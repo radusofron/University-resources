@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class MainMiddlePanel extends JPanel {
     final MainFrame frame;
-    JLabel leftTextBox = new JLabel("<html>* If you click on START VERSION 1, you have to enter just the rooms as input. <br><br>* A schedule will be created according to those rooms and their capacities.</html>");
+    JLabel leftTextBox = new JLabel("<html>* If you click on START VERSION 1, you have to enter just the rooms as input. <br><br>* A schedule will be created; it will use the minimum number of rooms in order to be created.</html>");
     JLabel rightTextBox = new JLabel("<html>* If you click on START VERSION 2, you have to enter the groups, the teachers and their correspondent classes as input. <br><br>* A schedule will be created according to the data which you have enetered.</html>");
     public MainMiddlePanel(MainFrame frame) {
         this.frame = frame;

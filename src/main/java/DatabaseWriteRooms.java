@@ -10,14 +10,13 @@ public class DatabaseWriteRooms {
     String password = "mysqlradu";
 
     public DatabaseWriteRooms(ArrayList<String> roomsName, int[] roomCapacities, int[] roomsAreBusy, int[] roomsId){
-        System.out.println("Connecting to the database...");
+        System.out.println("Connecting to database...");
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Database connection has been established!");
 
             String insertRoom = "insert into rooms (Name, Capacity, isBusy, ID)" + " values(?, ?, ?, ?)";
             for(int index = 0; index < VersionOneConfigurationPanel.numberOfRooms; index++)
             {
-                System.out.println("In Database:");
                 System.out.println(roomsName.get(index));
                 System.out.println(roomCapacities[index]);
                 System.out.println(roomsAreBusy[index]);
@@ -34,7 +33,7 @@ public class DatabaseWriteRooms {
             }
 
         } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect to the database!", e);
+            throw new IllegalStateException("Cannot connect to database!", e);
         }
     }
 }
