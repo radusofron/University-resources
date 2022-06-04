@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -52,8 +53,7 @@ public class Algorithm{
 
                 assignRoomsToClassesOfADay();
 
-                /* to be deleted */
-                printScheduleOfADay();
+                addToJTable();
 
                 // remove elements stored for this day
                 for(int index = allClasses.size() - 1; index >= 0; index--)
@@ -75,8 +75,7 @@ public class Algorithm{
 
                 assignRoomsToClassesOfADay();
 
-                /* to be deleted */
-                printScheduleOfADay();
+                addToJTable();
 
                 // remove elements stored for this day
                 for(int index = allClasses.size() - 1;  index >= 0; index--)
@@ -98,8 +97,7 @@ public class Algorithm{
 
                 assignRoomsToClassesOfADay();
 
-                /* to be deleted */
-                printScheduleOfADay();
+                addToJTable();
 
                 // remove elements stored for this day
                 for(int index = allClasses.size() - 1;  index >= 0; index--)
@@ -120,8 +118,7 @@ public class Algorithm{
 
                 assignRoomsToClassesOfADay();
 
-                /* to be deleted */
-                printScheduleOfADay();
+                addToJTable();
 
                 // remove elements stored for this day
                 for(int index = allClasses.size() - 1;  index >= 0; index--)
@@ -143,8 +140,7 @@ public class Algorithm{
 
                 assignRoomsToClassesOfADay();
 
-                /* to be deleted */
-                printScheduleOfADay();
+                addToJTable();
 
                 // remove elements stored for this day
                 for(int index = allClasses.size() - 1;  index >= 0; index--)
@@ -194,11 +190,10 @@ public class Algorithm{
         }
     }
 
-    /* to be deleted - prints class with the assigned rooms */
-    private void printScheduleOfADay() {
-        System.out.println("\nSchedule:");
+    // add data to JTable
+    private void addToJTable() {
         for(int index = 0; index < allClasses.size(); index++)
-            System.out.println(allClasses.get(index).toString());
+            VersionOneScheduleOutputPanel.model.addRow(new Object[]{allClasses.get(index).getName(), allClasses.get(index).getTeacher(), allClasses.get(index).getDayOfWeek(), allClasses.get(index).getStartTime(), allClasses.get(index).getSerie(), allClasses.get(index).getGroup(), allClasses.get(index).getRoomName()});
     }
 
 
@@ -225,7 +220,8 @@ public class Algorithm{
             allClasses.get(index).setRoomName(checkForFreeCourseRooms());
             if(allClasses.get(index).getRoomName().equals(""))
             {
-                System.out.println("No more rooms are available. Too many courses at the same time for this room configuration");
+                VersionOneIndicationPanel.indicationNo3.setForeground(Color.RED);
+                VersionOneIndicationPanel.indicationNo3.setText("Error! Course rooms insufficients!");
             }
         }
     }
@@ -268,7 +264,8 @@ public class Algorithm{
             allClasses.get(index).setRoomName(checkForFreeLabRooms());
             if(allClasses.get(index).getRoomName().equals(""))
             {
-                System.out.println("No more rooms are available. Too many laboratories at the same time for this room configuation");
+                VersionOneIndicationPanel.indicationNo3.setForeground(Color.RED);
+                VersionOneIndicationPanel.indicationNo3.setText("Error! Lab rooms insufficients!");
             }
         }
     }

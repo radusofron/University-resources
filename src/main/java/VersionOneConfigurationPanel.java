@@ -21,7 +21,7 @@ public class VersionOneConfigurationPanel extends JPanel{
         setMinimumSize (new Dimension (700, 40));
         setPreferredSize (new Dimension (700, 40));
         setMaximumSize (new Dimension (700, 40));
-        setBounds(50,0,700,40);
+        setBounds(50,75,700,40);
         setBorder(createBorder());
 
         // how many rooms menu
@@ -37,7 +37,7 @@ public class VersionOneConfigurationPanel extends JPanel{
 
     private Border createBorder() {
         Border border;
-        border = BorderFactory.createMatteBorder( 2,2,0,2, Color.BLACK);
+        border = BorderFactory.createMatteBorder( 1,2,0,2, Color.BLACK);
         return border;
     }
 

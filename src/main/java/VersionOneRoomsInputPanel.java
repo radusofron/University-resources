@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class VersionOneRoomsInputPanel extends JPanel {
     final VersionOneFrame versionOneFrame;
+    JLabel label;
     static JTextField nameField;
     static JSpinner capacitySpinner;
     static JButton nextBtn;
@@ -27,10 +28,11 @@ public class VersionOneRoomsInputPanel extends JPanel {
         setMinimumSize (new Dimension (700, 40));
         setPreferredSize (new Dimension (700, 40));
         setMaximumSize (new Dimension (700, 40));
-        setBounds(50, 90, 700, 40);
+        setBounds(50, 115, 700, 40);
         setBorder(createBorder());
 
-        // create text field for name, spinner for capacity & "next" button
+        // create label for indications, text field for name, spinner for capacity & "next" button
+        label = new JLabel("Insert room:");
         nameField = new JTextField("");
         nameField.setColumns(30);
         nameField.setEnabled(false);
@@ -38,6 +40,7 @@ public class VersionOneRoomsInputPanel extends JPanel {
         capacitySpinner.setEnabled(false);
         nextBtn = new JButton("Next");
         nextBtn.setEnabled(false);
+        add(label);
         add(nameField);
         add(capacitySpinner);
         add(nextBtn);

@@ -1,11 +1,13 @@
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class VersionOneScheduleOutputPanel extends JPanel{
     final VersionOneFrame versionOneFrame;
     JScrollPane scrollPane;
-    static JLabel label;
+    static DefaultTableModel model = new DefaultTableModel();
+    JTable schedule = new JTable(model);
 
     public VersionOneScheduleOutputPanel(VersionOneFrame frameOne){
         this.versionOneFrame = frameOne;
@@ -15,19 +17,26 @@ public class VersionOneScheduleOutputPanel extends JPanel{
     private void init(){
         // GUI settings
         setBackground(Color.GRAY);
-        setMinimumSize (new Dimension(700, 370));
-        setPreferredSize (new Dimension (700, 370));
-        setMaximumSize (new Dimension (700, 370));
-        setBounds(50, 130, 700, 370);
+        setMinimumSize (new Dimension(700, 345));
+        setPreferredSize (new Dimension (700, 345));
+        setMaximumSize (new Dimension (700, 345));
+        setBounds(50, 155, 700, 345);
         setBorder(createBorder());
 
+        model.addColumn("NAME");
+        model.addColumn("TEACHER");
+        model.addColumn("DAYOFWEEK");
+        model.addColumn("STARTTIME");
+        model.addColumn("SERIE");
+        model.addColumn("GROUP");
+        model.addColumn("ROOM");
+
         // add JScrollPane for the panel
-        label = new JLabel("The output should be right hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-        scrollPane = new JScrollPane(label);
-        scrollPane.setMinimumSize(new Dimension(650, 355));
-        scrollPane.setPreferredSize(new Dimension(650, 355));
-        scrollPane.setMaximumSize(new Dimension(650, 355));
-        scrollPane.setBounds(75, 140, 650, 355);
+        scrollPane = new JScrollPane(schedule);
+        scrollPane.setMinimumSize(new Dimension(650, 330));
+        scrollPane.setPreferredSize(new Dimension(650, 330));
+        scrollPane.setMaximumSize(new Dimension(650, 330));
+        scrollPane.setBounds(75, 140, 650, 330);
         add(scrollPane);
     }
 
