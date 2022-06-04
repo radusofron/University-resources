@@ -1,22 +1,24 @@
 public class Class {
     int id;
+    String name;
     String teacher;
     String isCourse;
     String dayOfWeek;
-    String timeOfWeek;
     int startTime;
     String serie;
     String group;
+    String roomName;
 
-    public Class(int id, String teacher, String isCourse, String dayOfWeek, String timeOfWeek, int startTime, String serie, String group) {
+    public Class(int id, String name, String teacher, String isCourse, String dayOfWeek, int startTime, String serie, String group) {
         this.id = id;
+        this.name = name;
         this.teacher = teacher;
         this.isCourse = isCourse;
         this.dayOfWeek = dayOfWeek;
-        this.timeOfWeek = timeOfWeek;
         this.startTime = startTime;
         this.serie = serie;
         this.group = group;
+        this.roomName = "";
     }
 
     public int getId() {
@@ -27,6 +29,14 @@ public class Class {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getIsCourse() {
         return isCourse;
     }
@@ -35,12 +45,12 @@ public class Class {
         this.isCourse = isCourse;
     }
 
-    public String getTimeOfWeek() {
-        return timeOfWeek;
+    public String getDayOfWeek() {
+        return dayOfWeek;
     }
 
-    public void setTimeOfWeek(String timeOfWeek) {
-        this.timeOfWeek = timeOfWeek;
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
 
     public int getStartTime() {
@@ -51,17 +61,26 @@ public class Class {
         this.startTime = startTime;
     }
 
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+
     @Override
     public String toString() {
         return "Class{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
                 ", teacher='" + teacher + '\'' +
                 ", isCourse='" + isCourse + '\'' +
                 ", dayOfWeek='" + dayOfWeek + '\'' +
-                ", timeOfWeek='" + timeOfWeek + '\'' +
                 ", startTime=" + startTime +
                 ", serie='" + serie + '\'' +
                 ", group='" + group + '\'' +
+                ", roomName='" + roomName + '\'' +
                 '}';
     }
 }

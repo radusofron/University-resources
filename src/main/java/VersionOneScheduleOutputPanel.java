@@ -5,7 +5,7 @@ import java.awt.*;
 public class VersionOneScheduleOutputPanel extends JPanel{
     final VersionOneFrame versionOneFrame;
     JScrollPane scrollPane;
-    JLabel label;
+    static JLabel label;
 
     public VersionOneScheduleOutputPanel(VersionOneFrame frameOne){
         this.versionOneFrame = frameOne;

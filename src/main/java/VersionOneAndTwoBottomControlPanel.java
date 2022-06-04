@@ -55,6 +55,7 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
             createBtn.setText("Creating schedule...");
             algorithm = new Algorithm();
             algorithm.startAlgorithm();
+            createBtn.setEnabled(false);
 
         }
         else{
