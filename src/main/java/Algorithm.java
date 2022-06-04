@@ -34,6 +34,7 @@ public class Algorithm{
         }
     }
 
+    // recursive function - reads classes of a day, one by one
     private void readClasses(String day) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             if(day.equals(daysOfWeek[0])) // extract classes on Monday
@@ -48,48 +49,110 @@ public class Algorithm{
                 }
 
                 System.out.println("\n\nMonday classes: \n");
-                printClassesOfADay(totalClasses);
 
                 assignRoomsToClassesOfADay();
 
                 /* to be deleted */
                 printScheduleOfADay();
 
+                // remove elements stored for this day
+                for(int index = allClasses.size() - 1; index >= 0; index--)
+                    allClasses.remove(index);
+
                 readClasses("TUESDAY");
             }
             if(day.equals(daysOfWeek[1]))
             {
-                System.out.println("Pe marti:");
+                Statement readClasses = connection.createStatement();
+                ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%TUESDAY%' order by STARTTIME");
+                int totalClasses = 0;
+                while (resultClasses.next()) {
+                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    totalClasses++;
+                    allClasses.add(aClass);
+                }
+                System.out.println("\n\nTuesday classes:");
+
+                assignRoomsToClassesOfADay();
+
+                /* to be deleted */
+                printScheduleOfADay();
+
+                // remove elements stored for this day
+                for(int index = allClasses.size() - 1;  index >= 0; index--)
+                    allClasses.remove(index);
 
                 readClasses("WEDNESDAY");
             }
             if(day.equals(daysOfWeek[2]))
             {
-                System.out.println("Pe miercuri");
+                Statement readClasses = connection.createStatement();
+                ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%WEDNESDAY%' order by STARTTIME");
+                int totalClasses = 0;
+                while (resultClasses.next()) {
+                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    totalClasses++;
+                    allClasses.add(aClass);
+                }
+                System.out.println("\n\nWednesday classes:");
 
+                assignRoomsToClassesOfADay();
+
+                /* to be deleted */
+                printScheduleOfADay();
+
+                // remove elements stored for this day
+                for(int index = allClasses.size() - 1;  index >= 0; index--)
+                    allClasses.remove(index);
                 readClasses("THURSDAY");
             }
             if(day.equals(daysOfWeek[3]))
             {
-                System.out.println("Pe joi:");
+                Statement readClasses = connection.createStatement();
+                ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%THURSDAY%' order by STARTTIME");
+                int totalClasses = 0;
+                while (resultClasses.next()) {
+                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    totalClasses++;
+                    allClasses.add(aClass);
+                }
+                System.out.println("\n\nThursday classes:");
+
+                assignRoomsToClassesOfADay();
+
+                /* to be deleted */
+                printScheduleOfADay();
+
+                // remove elements stored for this day
+                for(int index = allClasses.size() - 1;  index >= 0; index--)
+                    allClasses.remove(index);
 
                 readClasses("FRIDAY");
             }
             if(day.equals(daysOfWeek[4]))
             {
-                System.out.println("Pe vineri:");
+                Statement readClasses = connection.createStatement();
+                ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%FRIDAY%' order by STARTTIME");
+                int totalClasses = 0;
+                while (resultClasses.next()) {
+                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    totalClasses++;
+                    allClasses.add(aClass);
+                }
+                System.out.println("\n\nFriday classes:");
+
+                assignRoomsToClassesOfADay();
+
+                /* to be deleted */
+                printScheduleOfADay();
+
+                // remove elements stored for this day
+                for(int index = allClasses.size() - 1;  index >= 0; index--)
+                    allClasses.remove(index);
             }
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect to database!", e);
         }
-    }
-
-
-    /* to be deleted - prints class before assigning rooms */
-    private void printClassesOfADay(int totalClasses) {
-        System.out.println("Total classes identified: " + totalClasses);
-        for(int index = 0; index < totalClasses; index++)
-            System.out.println(allClasses.get(index).toString());
     }
 
     // main algorithm; uses: checkForFree(Course/Lab)Rooms() , checkIf(Course/Lab)AndAssignRoom, (course/lab)RoomsAvailableAgain()
