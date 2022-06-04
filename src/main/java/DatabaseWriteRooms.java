@@ -17,11 +17,6 @@ public class DatabaseWriteRooms {
             String insertRoom = "insert into rooms (Name, Capacity, isBusy, ID)" + " values(?, ?, ?, ?)";
             for(int index = 0; index < VersionOneConfigurationPanel.numberOfRooms; index++)
             {
-                System.out.println(roomsName.get(index));
-                System.out.println(roomCapacities[index]);
-                System.out.println(roomsAreBusy[index]);
-                System.out.println(roomsId[index]);
-
                 // put those attributes in a MySQL statement in order to be written in that database
                 PreparedStatement statementToBeWritten = connection.prepareStatement(insertRoom);
                 statementToBeWritten.setString(1, roomsName.get(index));
