@@ -4,7 +4,7 @@ Am implementat proiectul numarul 4, anume University Resources.
 
 In urmatoarele randuri, voi explica putin abordarea acestuia:
 - aplicatia realizata de mine are 2 versiuni: "Version1App" si "Version2App";
-- este construita pe 3 JFrame-uri, avand o interfata placuta si bine construita;
+- este construita pe 3 JFrame-uri, avand o interfata placuta si sugestiva;
 - la deschiderea acesteia, se alege din meniu versiunea dorita, utilizatorului deschizandu-se JFrame-ul corespunzator;
 - prezinta o conexiune cu 2 baza de date "MySQL", cate una pentru fiecare versiune a aplicatiei.
 
