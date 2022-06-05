@@ -2,7 +2,7 @@ public class Row {
     int id = 0;
     String teacher;
     String subject;
-    int isCourse;
+    String isCourse;
     String dayOfWeek;
     int startTime;
     String serie;
@@ -11,7 +11,7 @@ public class Row {
     public Row() {
         this.teacher = "";
         this.subject = "";
-        this.isCourse = 0;
+        this.isCourse = "";
         this.dayOfWeek = "";
         this.startTime = 0;
         this.serie = "";
@@ -42,11 +42,11 @@ public class Row {
         this.subject = subject;
     }
 
-    public int getIsCourse() {
+    public String getIsCourse() {
         return isCourse;
     }
 
-    public void setIsCourse(int isCourse) {
+    public void setIsCourse(String isCourse) {
         this.isCourse = isCourse;
     }
 

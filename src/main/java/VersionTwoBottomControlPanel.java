@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class VersionTwoBottomControlPanel extends JPanel {
     final VersionTwoFrame versionTwoFrame;
@@ -33,9 +37,24 @@ public class VersionTwoBottomControlPanel extends JPanel {
     }
 
     private void startAppTwo(ActionEvent event) {
+
+        deletePreviousRowsInTable();
         createBtn.setText("Creating schedule...");
         algorithm = new VersionTwoAlgorithm();
         algorithm.startAlgorithm();
         createBtn.setEnabled(false);
+    }
+
+    private void deletePreviousRowsInTable() {
+        String url = "jdbc:mysql://localhost:3306/university_resources_v_two";
+        String username = "radu";
+        String password = "mysqlradu";
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String query = "delete from mytable";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.execute();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect to database!", e);
+        }
     }
 }

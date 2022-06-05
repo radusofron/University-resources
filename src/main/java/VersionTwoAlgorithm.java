@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Random;
 
 public class VersionTwoAlgorithm {
@@ -16,8 +13,7 @@ public class VersionTwoAlgorithm {
     }
 
     public void startAlgorithm(){
-
-
+            // generate random days and hours
             Random random = new Random();
             int startTimesIndex;
             int daysOfWeekIndex;
@@ -50,11 +46,9 @@ public class VersionTwoAlgorithm {
                         }
                     }
                 }while(isOkay == false);
-                System.out.println("Random start time: " + startTimes[startTimesIndex]);
-                System.out.println("Random day: " + daysOfWeek[daysOfWeekIndex]);
             }
             addToJTable();
-           //writeClassesToDatabase(); -> didn't work
+           writeClassesToDatabase();
            VersionTwoBottomControlPanel.createBtn.setEnabled(false);
     }
 
@@ -66,11 +60,10 @@ public class VersionTwoAlgorithm {
 
     // write schedule to database
     private void writeClassesToDatabase() {
-        System.out.println("Connecting to database...");
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Database connection has been established!");
 
-            String insertRoom = "insert into mytable (ID, NAME, TEACHER, isCourse, DAYOFWEEK, STARTTIME, SERIE, GROUP)" + " values(?, ?, ?, ?, ?, ?, ?, ?)";
+            String insertRoom = "insert into mytable (`ID`, `NAME`, `TEACHER`, `isCOURSE`, `DAYOFWEEK`, `STARTTIME`, `SERIE`, `GROUP`)" + " values(?, ?, ?, ?, ?, ?, ?, ?)";
             for(int index = 0; index < VersionTwoMenuPanel.rows.size(); index++)
             {
                 // put those attributes in a MySQL statement in order to be written in that database
@@ -78,15 +71,13 @@ public class VersionTwoAlgorithm {
                 statementToBeWritten.setInt(1, VersionTwoMenuPanel.rows.get(index).getId());
                 statementToBeWritten.setString(2, VersionTwoMenuPanel.rows.get(index).getSubject());
                 statementToBeWritten.setString(3, VersionTwoMenuPanel.rows.get(index).getTeacher());
-                statementToBeWritten.setInt(4, VersionTwoMenuPanel.rows.get(index).getIsCourse());
+                statementToBeWritten.setString(4, VersionTwoMenuPanel.rows.get(index).getIsCourse());
                 statementToBeWritten.setString(5, VersionTwoMenuPanel.rows.get(index).getDayOfWeek());
                 statementToBeWritten.setInt(6, VersionTwoMenuPanel.rows.get(index).getStartTime());
                 statementToBeWritten.setString(7, VersionTwoMenuPanel.rows.get(index).getSerie());
                 statementToBeWritten.setString(8, VersionTwoMenuPanel.rows.get(index).getGroup());
-
                 statementToBeWritten.execute();
             }
-
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect to database!", e);
         }

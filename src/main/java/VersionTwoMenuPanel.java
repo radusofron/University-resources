@@ -53,13 +53,13 @@ public class VersionTwoMenuPanel extends JPanel {
         {
             // create a new instance for Row class and initalise it
             row = new Row();
-            row.setId(counterForRows);
+            row.setId(counterForRows+1);
             row.setTeacher(VersionTwoTeacherSubjectInputPanel.teacherName.getText());
             row.setSubject(VersionTwoTeacherSubjectInputPanel.subjectName.getText());
             if(VersionTwoIsCourseSerieGroupInputPanel.isCourse.isSelected())
-                row.setIsCourse(1);
+                row.setIsCourse("Yes");
             else
-                row.setIsCourse(0);
+                row.setIsCourse("No");
             row.setSerie(VersionTwoIsCourseSerieGroupInputPanel.serie.getText());
             row.setGroup(VersionTwoIsCourseSerieGroupInputPanel.group.getText());
 
