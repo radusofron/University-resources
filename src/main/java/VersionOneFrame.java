@@ -19,13 +19,13 @@ public class VersionOneFrame extends JFrame {
         setMaximumSize(new Dimension(800,600));
         setBounds(225,50,800,600);
 
-        // create configuration panel
-        VersionOneConfigurationPanel configPanel = new VersionOneConfigurationPanel(this);
-        add(configPanel);
-
         // create indications panel
         VersionOneIndicationPanel indicationPanel = new VersionOneIndicationPanel(this);
         add(indicationPanel);
+
+        // create configuration panel
+        VersionOneConfigurationPanel configPanel = new VersionOneConfigurationPanel(this);
+        add(configPanel);
 
         // create input panel
         VersionOneRoomsInputPanel inputPanel = new VersionOneRoomsInputPanel(this);
@@ -35,7 +35,7 @@ public class VersionOneFrame extends JFrame {
         VersionOneScheduleOutputPanel outputPanel = new VersionOneScheduleOutputPanel(this);
         add(outputPanel);
 
-        // create  panel with start & exit buttons
+        // create  panel with create schedule & exit buttons
         VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
         add(optionsPanel);
 

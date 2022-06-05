@@ -12,11 +12,27 @@ public class VersionTwoFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
 
-        // set the size of the frame
-        setPreferredSize(new Dimension(800,600));
+        // GUI settings
+        setLayout(null);
+        setMinimumSize(new Dimension(900,600));
+        setPreferredSize(new Dimension(900,600));
+        setMaximumSize(new Dimension(900,600));
+        setBounds(225,50,900,600);
 
-        // create  panel with start & exit buttons
+        // create indications panel
+        VersionTwoIndicationPanel indicationPanel = new VersionTwoIndicationPanel(this);
+        add(indicationPanel);
+
+        // create input panel for teachers
+        VersionTwoTeachersInputPanel teachersInputPanel = new VersionTwoTeachersInputPanel(this);
+        add(teachersInputPanel);
+
+        // create input panel for teachers' subjects
+        VersionTwoSubjectsInputPanel subjectsInputPanel = new VersionTwoSubjectsInputPanel(this);
+        add(subjectsInputPanel);
+
+        // create  panel with create schedule & exit buttons
         VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
-        add(optionsPanel, BorderLayout.SOUTH);
+        add(optionsPanel);
     }
 }

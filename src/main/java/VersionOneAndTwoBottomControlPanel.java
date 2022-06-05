@@ -7,7 +7,7 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
     final VersionTwoFrame versionTwoFrame;
     JButton createBtn = new JButton("Create schedule");
     JButton exitBtn = new JButton("Exit");
-    Algorithm algorithm;
+    VersionOneAlgorithm algorithm;
 
     public VersionOneAndTwoBottomControlPanel(VersionOneFrame frameOne) {
         this.versionOneFrame = frameOne;
@@ -53,7 +53,7 @@ public class VersionOneAndTwoBottomControlPanel extends JPanel {
         if(!VersionOneRoomsInputPanel.nextBtn.isEnabled())
         {
             createBtn.setText("Creating schedule...");
-            algorithm = new Algorithm();
+            algorithm = new VersionOneAlgorithm();
             algorithm.startAlgorithm();
             createBtn.setEnabled(false);
 

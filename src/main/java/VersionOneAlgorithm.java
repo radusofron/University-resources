@@ -2,19 +2,19 @@ import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Algorithm {
+public class VersionOneAlgorithm {
     String url = "jdbc:mysql://localhost:3306/university_resources_v_one";
     String username = "radu";
     String password = "mysqlradu";
     CourseRoom aCourseRoom;
     LaboratoryRoom aLabRoom;
-    Class aClass;
+    VersionOneClass aClass;
     ArrayList<CourseRoom> allCourseRooms = new ArrayList<>();
     ArrayList<LaboratoryRoom> allLabRooms = new ArrayList<>();
-    ArrayList<Class> allClasses = new ArrayList<>();
+    ArrayList<VersionOneClass> allClasses = new ArrayList<>();
     String[] daysOfWeek = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"};
 
-    public Algorithm() {
+    public VersionOneAlgorithm() {
         System.out.println("Starting the algorithm...");
     }
 
@@ -43,7 +43,7 @@ public class Algorithm {
                 Statement readClasses = connection.createStatement();
                 ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%MONDAY%' order by STARTTIME");
                 while (resultClasses.next()) {
-                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    aClass = new VersionOneClass(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
                     allClasses.add(aClass);
                 }
 
@@ -62,7 +62,7 @@ public class Algorithm {
                 ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%TUESDAY%' order by STARTTIME");
                 int totalClasses = 0;
                 while (resultClasses.next()) {
-                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    aClass = new VersionOneClass(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
                     totalClasses++;
                     allClasses.add(aClass);
                 }
@@ -82,7 +82,7 @@ public class Algorithm {
                 ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%WEDNESDAY%' order by STARTTIME");
                 int totalClasses = 0;
                 while (resultClasses.next()) {
-                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    aClass = new VersionOneClass(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
                     totalClasses++;
                     allClasses.add(aClass);
                 }
@@ -101,7 +101,7 @@ public class Algorithm {
                 ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%THURSDAY%' order by STARTTIME");
                 int totalClasses = 0;
                 while (resultClasses.next()) {
-                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    aClass = new VersionOneClass(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
                     totalClasses++;
                     allClasses.add(aClass);
                 }
@@ -120,7 +120,7 @@ public class Algorithm {
                 Statement readClasses = connection.createStatement();
                 ResultSet resultClasses = readClasses.executeQuery("select * from classes where DAYOFWEEK LIKE '%FRIDAY%' order by STARTTIME");
                 while (resultClasses.next()) {
-                    aClass = new Class(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
+                    aClass = new VersionOneClass(resultClasses.getInt("ID"), resultClasses.getString("NAME"), resultClasses.getString("TEACHER"), resultClasses.getString("isCOURSE"), resultClasses.getString("DAYOFWEEK"), resultClasses.getInt("STARTTIME"), resultClasses.getString("SERIE"), resultClasses.getString("GROUP"));
                     allClasses.add(aClass);
                 }
 

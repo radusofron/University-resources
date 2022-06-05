@@ -24,7 +24,7 @@ public class VersionOneIndicationPanel extends JPanel {
         setBorder(createBorder());
 
         // indications on how to use the app
-        indicationNo1 = new JLabel("1) First, you have to insert the number of rooms, above.");
+        indicationNo1 = new JLabel("1) First, you have to insert the number of rooms.");
         indicationNo2 = new JLabel("2) Then, you have to insert a name and a capacity for every room.");
         indicationNo3 = new JLabel("3) The schedule will be displayed in the white box down below.");
         indicationNo1.setHorizontalAlignment(JLabel.CENTER);

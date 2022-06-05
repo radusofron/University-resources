@@ -1,4 +1,4 @@
-public class Class {
+public class VersionOneClass {
     int id;
     String name;
     String teacher;
@@ -9,7 +9,7 @@ public class Class {
     String group;
     String roomName;
 
-    public Class(int id, String name, String teacher, String isCourse, String dayOfWeek, int startTime, String serie, String group) {
+    public VersionOneClass(int id, String name, String teacher, String isCourse, String dayOfWeek, int startTime, String serie, String group) {
         this.id = id;
         this.name = name;
         this.teacher = teacher;
