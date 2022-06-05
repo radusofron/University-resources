@@ -16,9 +16,7 @@ public class VersionTwoAlgorithm {
     }
 
     public void startAlgorithm(){
-        System.out.println("Connecting to database...");
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Database connection has been established!");
+
 
             Random random = new Random();
             int startTimesIndex;
@@ -54,8 +52,23 @@ public class VersionTwoAlgorithm {
                 }while(isOkay == false);
                 System.out.println("Random start time: " + startTimes[startTimesIndex]);
                 System.out.println("Random day: " + daysOfWeek[daysOfWeekIndex]);
-
             }
+            addToJTable();
+           //writeClassesToDatabase(); -> didn't work
+           VersionTwoBottomControlPanel.createBtn.setEnabled(false);
+    }
+
+    // add data to JTable
+    private void addToJTable() {
+        for (int index = 0; index < VersionTwoMenuPanel.rows.size(); index++)
+            VersionTwoScheduleOutputPanel.model.addRow(new Object[]{VersionTwoMenuPanel.rows.get(index).getSubject(), VersionTwoMenuPanel.rows.get(index).getTeacher(), VersionTwoMenuPanel.rows.get(index).getDayOfWeek(), VersionTwoMenuPanel.rows.get(index).getStartTime(), VersionTwoMenuPanel.rows.get(index).getSerie(), VersionTwoMenuPanel.rows.get(index).getGroup()});
+    }
+
+    // write schedule to database
+    private void writeClassesToDatabase() {
+        System.out.println("Connecting to database...");
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Database connection has been established!");
 
             String insertRoom = "insert into mytable (ID, NAME, TEACHER, isCourse, DAYOFWEEK, STARTTIME, SERIE, GROUP)" + " values(?, ?, ?, ?, ?, ?, ?, ?)";
             for(int index = 0; index < VersionTwoMenuPanel.rows.size(); index++)
@@ -73,6 +86,7 @@ public class VersionTwoAlgorithm {
 
                 statementToBeWritten.execute();
             }
+
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect to database!", e);
         }

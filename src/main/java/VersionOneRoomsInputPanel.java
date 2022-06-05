@@ -15,7 +15,7 @@ public class VersionOneRoomsInputPanel extends JPanel {
     int[] roomCapacities = new int[20];
     int[] roomsAreBusy = new int[20];
     int[] roomsId = new int[20];
-    DatabaseWriteRooms database;
+    VersionOneDatabaseWriteRooms database;
 
     public VersionOneRoomsInputPanel(VersionOneFrame frameOne){
         this.versionOneFrame = frameOne;
@@ -77,7 +77,7 @@ public class VersionOneRoomsInputPanel extends JPanel {
        // all the necessary rooms were inserted
        if(counterForRooms == VersionOneConfigurationPanel.numberOfRooms)
        {
-           database = new DatabaseWriteRooms(roomNames, roomCapacities, roomsAreBusy, roomsId);
+           database = new VersionOneDatabaseWriteRooms(roomNames, roomCapacities, roomsAreBusy, roomsId);
            nameField.setEnabled(false);
            capacitySpinner.setEnabled(false);
            nextBtn.setEnabled(false);
