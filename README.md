@@ -11,7 +11,7 @@ In urmatoarele randuri, voi explica putin abordarea acestuia:
 Version1App:
 * primeste ca input un numar de sali si capacitatea fiecareia;
 * are un orar predefinit stocat intr-o baza de date;
-* asigneaza sali in modul cel mai eficient posibil ( => in cat mai putine sali folosite posibile);
+* asigneaza sali in modul cel mai eficient posibil ( => numarul minim, obligatoriu de sali, restul fiind nefolosite intotdeauna);
 * returneaza orarul astfel obtinut in aplicatie.
 
 Version2App:
