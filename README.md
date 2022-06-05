@@ -2,7 +2,7 @@
 
 Am implementat proiectul numarul 4, anume University Resources. 
 
-In urmatoarele randuri, voi explica putin abordarea acesteia:
+In urmatoarele randuri, voi explica putin abordarea acestuia:
 - aplicatia realizata de mine are 2 versiuni: "Version1App" si "Version2App";
 - este construita pe JFrame-uri, avand o interfata placuta si bine construita;
 - la deschiderea acesteia, se alege din meniu versiunea dorita, utilizatorului deschizandu-se JFrame-ul corespunzator;
