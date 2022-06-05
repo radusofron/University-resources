@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31ee3afc-f2ce-4f59-add4-d2e41f24d187" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/VersionTwoIsCourseSerieGroupInputPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneAndTwoBottomControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneAndTwoBottomControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneAndTwoBottomControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneBottomControlPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VersionOneIndicationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionOneIndicationPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VersionTwoFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionTwoFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VersionTwoIndicationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionTwoIndicationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VersionTwoSubjectsInputPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VersionTwoTeachersInputPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VersionTwoTeacherSubjectInputPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneAndTwoBottomControlPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/VersionOneFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/VersionOneIndicationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionOneIndicationPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/VersionTwoFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionTwoFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VersionTwoIndicationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VersionTwoIndicationPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VersionTwoSubjectsInputPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VersionTwoTeachersInputPanel.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654022136360</updated>
       <workItem from="1654022137688" duration="64838000" />
-      <workItem from="1654274943672" duration="41291000" />
+      <workItem from="1654274943672" duration="50582000" />
     </task>
     <servers />
   </component>

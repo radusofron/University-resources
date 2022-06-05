@@ -24,9 +24,9 @@ public class VersionTwoIndicationPanel extends JPanel {
         setBorder(createBorder());
 
         // indications on how to use the app
-        indicationNo1 = new JLabel("1) You have to insert a teacher and its number of subjects which he/she teaches.");
-        indicationNo2 = new JLabel("2) Then, you have to insert a name for every subject which he/she teaches and how many classes he/she has for it.");
-        indicationNo3 = new JLabel("3) The process is the same for every teacher untill you click Finish. Finally, the schedule will be displayed in the white box down below.");
+        indicationNo1 = new JLabel("1) First, you have to insert a name for the table in which the schedule will be stored.");
+        indicationNo2 = new JLabel("2) Then, you have to insert: a teacher, name of class, if it is a course, a serie and a group for every class.");
+        indicationNo3 = new JLabel("3) The schedule will be displayed in the white box down below.");
         indicationNo1.setHorizontalAlignment(JLabel.CENTER);
         indicationNo2.setHorizontalAlignment(JLabel.CENTER);
         indicationNo3.setHorizontalAlignment(JLabel.CENTER);

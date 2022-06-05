@@ -36,7 +36,7 @@ public class VersionOneFrame extends JFrame {
         add(outputPanel);
 
         // create  panel with create schedule & exit buttons
-        VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
+        VersionOneBottomControlPanel optionsPanel = new VersionOneBottomControlPanel(this);
         add(optionsPanel);
 
         // invoke the layout manager

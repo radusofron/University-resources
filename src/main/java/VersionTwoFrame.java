@@ -23,16 +23,28 @@ public class VersionTwoFrame extends JFrame {
         VersionTwoIndicationPanel indicationPanel = new VersionTwoIndicationPanel(this);
         add(indicationPanel);
 
-        // create input panel for teachers
-        VersionTwoTeachersInputPanel teachersInputPanel = new VersionTwoTeachersInputPanel(this);
+        // create table name panel
+        VersionTwoTableNameInputPanel tableNameInputPanel = new VersionTwoTableNameInputPanel(this);
+        add(tableNameInputPanel);
+
+        // create input panel containing teacher's name and name of the subject
+        VersionTwoTeacherSubjectInputPanel teachersInputPanel = new VersionTwoTeacherSubjectInputPanel(this);
         add(teachersInputPanel);
 
-        // create input panel for teachers' subjects
-        VersionTwoSubjectsInputPanel subjectsInputPanel = new VersionTwoSubjectsInputPanel(this);
+        // create input panel containing if is a course, serie and group
+        VersionTwoIsCourseSerieGroupInputPanel subjectsInputPanel = new VersionTwoIsCourseSerieGroupInputPanel(this);
         add(subjectsInputPanel);
 
+        // create menu
+        VersionTwoMenuPanel versionTwoMenuPanel = new VersionTwoMenuPanel(this);
+        add(versionTwoMenuPanel);
+
+        // create output panel
+        VersionTwoScheduleOutputPanel versionTwoScheduleOutputPanel = new VersionTwoScheduleOutputPanel(this);
+        add(versionTwoScheduleOutputPanel);
+
         // create  panel with create schedule & exit buttons
-        VersionOneAndTwoBottomControlPanel optionsPanel = new VersionOneAndTwoBottomControlPanel(this);
+        VersionTwoBottomControlPanel optionsPanel = new VersionTwoBottomControlPanel(this);
         add(optionsPanel);
     }
 }
