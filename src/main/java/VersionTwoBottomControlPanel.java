@@ -6,14 +6,14 @@ public class VersionTwoBottomControlPanel extends JPanel {
     final VersionTwoFrame versionTwoFrame;
     static JButton createBtn = new JButton("Create schedule");
     JButton exitBtn = new JButton("Exit");
-    VersionOneAlgorithm algorithm;
+    VersionTwoAlgorithm algorithm;
 
     public VersionTwoBottomControlPanel(VersionTwoFrame frameTwo) {
         this.versionTwoFrame = frameTwo;
-        initForVersionOne();
+        initForVersionTwo();
     }
 
-    private void initForVersionOne() {
+    private void initForVersionTwo() {
         // GUI settings
         setMinimumSize(new Dimension(800,50));
         setPreferredSize(new Dimension(800,50));
@@ -33,13 +33,9 @@ public class VersionTwoBottomControlPanel extends JPanel {
     }
 
     private void startAppTwo(ActionEvent event) {
-        createBtn.setEnabled(false);
         createBtn.setText("Creating schedule...");
-
-        /* display rows to see if it's all okay */
-        for(int index = 0; index < VersionTwoMenuPanel.counterForRows; index++)
-            System.out.println(VersionTwoMenuPanel.rows.get(index).toString());
-
-
+        algorithm = new VersionTwoAlgorithm();
+        algorithm.startAlgorithm();
+        createBtn.setEnabled(false);
     }
 }

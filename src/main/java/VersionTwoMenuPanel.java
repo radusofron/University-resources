@@ -53,6 +53,7 @@ public class VersionTwoMenuPanel extends JPanel {
         {
             // create a new instance for Row class and initalise it
             row = new Row();
+            row.setId(counterForRows);
             row.setTeacher(VersionTwoTeacherSubjectInputPanel.teacherName.getText());
             row.setSubject(VersionTwoTeacherSubjectInputPanel.subjectName.getText());
             if(VersionTwoIsCourseSerieGroupInputPanel.isCourse.isSelected())
@@ -66,10 +67,7 @@ public class VersionTwoMenuPanel extends JPanel {
             rows.add(row);
             counterForRows++;
 
-            // make empty every text field
-            VersionTwoTeacherSubjectInputPanel.teacherName.setText("");
-            VersionTwoTeacherSubjectInputPanel.subjectName.setText("");
-            VersionTwoIsCourseSerieGroupInputPanel.serie.setText("");
+            // make just group text field empty (for the rest - it is useful to have the same)
             VersionTwoIsCourseSerieGroupInputPanel.group.setText("");
 
             // at least on row is inserted -> done options becomes possible

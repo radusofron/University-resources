@@ -31,13 +31,11 @@ public class FramesController {
                 if(versionOneSelected == true)
                 {
                     versionIsSelected = true;
-                    System.out.println("Version 1 has been choosen");
 
                 }
                 if(versionTwoSelected == true)
                 {
                     versionIsSelected = true;
-                    System.out.println("Version 2 has been choosen");
                 }
 
                 // this while will check once per 1 second

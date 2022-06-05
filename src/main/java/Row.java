@@ -1,4 +1,5 @@
 public class Row {
+    int id = 0;
     String teacher;
     String subject;
     int isCourse;
@@ -15,6 +16,14 @@ public class Row {
         this.startTime = 0;
         this.serie = "";
         this.group = "";
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTeacher() {
@@ -76,7 +85,8 @@ public class Row {
     @Override
     public String toString() {
         return "Row{" +
-                "teacher='" + teacher + '\'' +
+                "id=" + id +
+                ", teacher='" + teacher + '\'' +
                 ", subject='" + subject + '\'' +
                 ", isCourse=" + isCourse +
                 ", dayOfWeek='" + dayOfWeek + '\'' +
